@@ -7,8 +7,8 @@ from datetime import datetime
 
 # change it to your own
 # get your oauth here: https://twitchapps.com/tmi/
-nickname = 'twitch_plays_3ds'
-oauth = 'oauth:qmdwk3rsm4qau59zf2dpxixsf4wxzf'
+nickname = 'Mis012'
+oauth = 'oauth:rb6ki1vmhcbebm8la7a0yp1rngm8dp'
 
 def ensure_dir(dir_path):
     if not os.path.exists(dir_path):
@@ -53,7 +53,7 @@ while 1:
     for item in [x for x in tmi_list if "." not in x.username]:
         message_orig = item.message.replace(chr(1) + "ACTION", "/me").replace(chr(1), '').lstrip().rstrip()
         log_msg(item.username, message_orig)
-        safe_print(item.username + ": " + message_orig)
+        safe_print("\033[94m" + item.username + "\033[0m: " + message_orig)
 
     if last_message != '':
         safe_print(">> " + nickname + ": " + last_message)
